@@ -1,0 +1,12 @@
+{
+  "framework": "vite",
+  "installCommand": "npm ci --prefix marketpulse-pro/frontend && npm ci --prefix marketpulse-pro/backend",
+  "buildCommand": "npm run build --prefix marketpulse-pro/frontend",
+  "outputDirectory": "marketpulse-pro/frontend/dist",
+  "rewrites": [
+    {
+      "source": "/:path((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

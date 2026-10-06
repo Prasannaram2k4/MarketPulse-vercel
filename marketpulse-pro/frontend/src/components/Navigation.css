@@ -1,0 +1,227 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid rgb(227 234 229 / 88%);
+  background: rgb(255 255 255 / 92%);
+  backdrop-filter: blur(18px);
+}
+
+.navbar-container {
+  width: min(100%, 1640px);
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 10px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.navbar-brand,
+.brand-link,
+.navbar-menu,
+.navbar-item,
+.navbar-actions,
+.market-status,
+.logout-btn {
+  display: flex;
+  align-items: center;
+}
+
+.brand-link {
+  gap: 11px;
+  flex-shrink: 0;
+  color: #17231f;
+  font-size: 1.06rem;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+}
+
+.brand-link:hover {
+  color: #4d7a26;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #e9f5dd;
+  font-size: 1.15rem;
+}
+
+.navbar-menu {
+  min-width: 0;
+  justify-content: center;
+  gap: 4px;
+}
+
+.navbar-item {
+  min-height: 42px;
+  gap: 7px;
+  padding: 0 11px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #66736b;
+  font-size: 0.81rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.navbar-item:hover {
+  color: #17231f;
+  background: #f5f8f5;
+}
+
+.navbar-item.active {
+  border-color: #e5efdd;
+  color: #365921;
+  background: #f0f7e9;
+}
+
+.nav-icon {
+  font-size: 0.98rem;
+  line-height: 1;
+}
+
+.navbar-actions {
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.market-status {
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 11px;
+  border: 1px solid #e3eae5;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+.status-open {
+  background: #63b344;
+  box-shadow: 0 0 0 3px rgb(99 179 68 / 13%);
+}
+
+.status-closed {
+  background: #dc6b5d;
+}
+
+.status-text {
+  color: #647268;
+  font-size: 0.74rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.logout-btn {
+  min-height: 38px;
+  gap: 7px;
+  padding: 0 13px;
+  border: 1px solid #e8e9e6;
+  border-radius: 11px;
+  color: #657168;
+  background: #fff;
+  font-size: 0.8rem;
+  font-weight: 650;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.logout-btn:hover {
+  border-color: #f0d5d1;
+  color: #a43c31;
+  background: #fff8f6;
+}
+
+.logout-icon {
+  font-size: 0.9rem;
+}
+
+@keyframes status-pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@media (max-width: 1180px) {
+  .navbar-container {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 12px 20px 8px;
+  }
+
+  .navbar-menu {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .navbar-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar-item {
+    min-height: 38px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar-container {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .brand-link {
+    gap: 8px;
+    font-size: 0.98rem;
+  }
+
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .navbar-actions {
+    gap: 7px;
+  }
+
+  .market-status {
+    min-height: 34px;
+    padding: 0 9px;
+  }
+
+  .logout-btn {
+    width: 36px;
+    min-height: 36px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .logout-btn span:last-child {
+    display: none;
+  }
+
+  .navbar-item {
+    font-size: 0.77rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none;
+  }
+}
